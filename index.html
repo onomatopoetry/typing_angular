@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Typing test</title>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <!-- object files -->
+  <script src="js/monster.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-key-press>
+  <div id="game-container" ng-controller="GameController">
+    <div id="keyboard-container">
+      <div class="key-row-first">
+        <!-- Top letters on keyboard -->
+        <div class="key-button {{item.state}}" ng-repeat="item in cells | limitTo : 10">
+          <span>{{item.letter}}</span>
+        </div>
+      </div>
+      <div class="key-row-second">
+        <!-- Middle letters on keyboard -->
+        <div class="key-button {{item.state}}" ng-repeat="item in cells | slice : 10 : 19">
+          <span>{{item.letter}}</span>
+        </div>
+      </div>
+      <div class="key-row-third">
+        <!-- Bottom letters on keyboard -->
+        <div class="key-button {{item.state}}" ng-repeat="item in cells | limitTo : -7">
+          <span>{{item.letter}}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div id="current-input"><h1>{{currentInput}}</h1></div>
+    
+    <div id="wordbank">
+      <span ng-repeat="item in wordbank | filter : currentInput">
+        {{ item }}
+        <span ng-show=" ! $last "> - </span>
+      </span>
+    <div>
+  </div>
+</body>
+</html>

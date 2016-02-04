@@ -1,0 +1,56 @@
+.key-button {
+  height : 80px; width : 80px;
+  border : 2px solid;
+  border-radius : 3px;
+  display : inline-block;
+  vertical-align : middle;
+  text-align : center;
+  margin : 4px;
+}
+
+.key-button.normal {
+  border-color : #FF8800;
+  color : #FF8800;
+}
+
+.key-button.down {
+  border-color : #FF0000;
+  color : #FF0000;
+}
+
+.key-button.selected {
+  border-color : #FF0000;
+  color : #FF0000;
+  background-color : #FFEBEB;
+}
+
+.key-button span {
+  line-height : 80px;
+  font-size : 2em;
+}
+
+.key-row-second {
+  margin-left : 40px;
+}
+
+.key-row-third {
+  margin-left : 120px;
+}
+
+#keyboard-container {
+  display : table;
+  margin : 0 auto;
+}
+
+#current-input {
+  text-align : center;
+  margin-top : 20px;
+  font-size : 2em;
+  color : #FF0000;
+}
+
+#wordbank {
+  text-align : center;
+  margin : 10px auto;
+  color : #3D3D3D;
+}
